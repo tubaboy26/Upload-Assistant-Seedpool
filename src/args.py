@@ -161,6 +161,7 @@ class Args():
         parser.add_argument('-dm', '--delete-meta', action='store_true', required=False, dest='delete_meta', help="Delete only meta.json from tmp directory")
         parser.add_argument('-fl', '--freeleech', nargs=1, required=False, help="Freeleech Percentage", default=0, dest="freeleech")
         parser.add_argument('--infohash', nargs=1, required=False, help="V1 Info Hash")
+        parser.add_argument('--noaka', action='store_true', required=False, help="No alternate names appended to title (AKA)")
         args, before_args = parser.parse_known_args(input)
         args = vars(args)
         # console.print(args)
