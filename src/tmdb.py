@@ -571,7 +571,7 @@ async def tmdb_other_meta(
     # Check if AKA is too similar to title and clear it if needed
     if retrieved_aka:
         difference = SequenceMatcher(None, title.lower(), retrieved_aka[5:].lower()).ratio()
-        if difference >= 0.9 or retrieved_aka[5:].strip() == "" or retrieved_aka[5:].strip().lower() in title.lower():
+        if difference >= 0.9 or retrieved_aka[5:].strip() == "" or retrieved_aka[5:].strip().lower() in title.lower() or meta.get('noaka'):
             retrieved_aka = ""
         if year and f"({year})" in retrieved_aka:
             retrieved_aka = retrieved_aka.replace(f"({year})", "").strip()
